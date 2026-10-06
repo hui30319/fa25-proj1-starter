@@ -98,36 +98,192 @@ bool test_is_vowel() {
 
 bool test_is_tail() {
   // TODO: Implement this function.
+  if (!assert_true("w", is_tail('w')))
+    return false;
+  if (!assert_true("a", is_tail('a')))
+    return false;
+  if (!assert_true("s", is_tail('s')))
+    return false;
+  if (!assert_true("d", is_tail('d')))
+    return false;
+  if (!assert_false("^", is_tail('^')))
+    return false;
+  if (!assert_false("<", is_tail('<')))
+    return false;
+  if (!assert_false("v", is_tail('v')))
+    return false;
+  if (!assert_false(">", is_tail('>')))
+    return false;
+  if (!assert_false("W", is_tail('W')))
+    return false;
+  if (!assert_false("A", is_tail('A')))
+    return false;
+  if (!assert_false("S", is_tail('S')))
+    return false;
+  if (!assert_false("D", is_tail('D')))
+    return false;
+  if (!assert_false("x", is_tail('x')))
+    return false;
+  if (!assert_false(" ", is_tail(' ')))
+    return false;
   return true;
 }
 
 bool test_is_head() {
   // TODO: Implement this function.
+  if (!assert_false("w", is_head('w')))
+    return false;
+  if (!assert_false("a", is_head('a')))
+    return false;
+  if (!assert_false("s", is_head('s')))
+    return false;
+  if (!assert_false("d", is_head('d')))
+    return false;
+  if (!assert_false("^", is_head('^')))
+    return false;
+  if (!assert_false("<", is_head('<')))
+    return false;
+  if (!assert_false("v", is_head('v')))
+    return false;
+  if (!assert_false(">", is_head('>')))
+    return false;
+  if (!assert_true("W", is_head('W')))
+    return false;
+  if (!assert_true("A", is_head('A')))
+    return false;
+  if (!assert_true("S", is_head('S')))
+    return false;
+  if (!assert_true("D", is_head('D')))
+    return false;
+  if (!assert_true("x", is_head('x')))
+    return false;
+  if (!assert_false(" ", is_head(' ')))
+    return false;
   return true;
 }
 
 bool test_is_snake() {
   // TODO: Implement this function.
+  if (!assert_true("w", is_snake('w')))
+    return false;
+  if (!assert_true("a", is_snake('a')))
+    return false;
+  if (!assert_true("s", is_snake('s')))
+    return false;
+  if (!assert_true("d", is_snake('d')))
+    return false;
+  if (!assert_true("^", is_snake('^')))
+    return false;
+  if (!assert_true("<", is_snake('<')))
+    return false;
+  if (!assert_true("v", is_snake('v')))
+    return false;
+  if (!assert_true(">", is_snake('>')))
+    return false;
+  if (!assert_true("W", is_snake('W')))
+    return false;
+  if (!assert_true("A", is_snake('A')))
+    return false;
+  if (!assert_true("S", is_snake('S')))
+    return false;
+  if (!assert_true("D", is_snake('D')))
+    return false;
+  if (!assert_true("x", is_snake('x')))
+    return false;
+  if (!assert_false(" ", is_snake(' ')))
+    return false;
   return true;
 }
 
 bool test_body_to_tail() {
   // TODO: Implement this function.
+  if (!assert_equals_char("^", 'w', body_to_tail('^')))
+    return false;
+  if (!assert_equals_char("<", 'a', body_to_tail('<')))
+    return false;
+  if (!assert_equals_char("v", 's', body_to_tail('v')))
+    return false;
+  if (!assert_equals_char(">", 'd', body_to_tail('>')))
+    return false;
   return true;
 }
 
 bool test_head_to_body() {
   // TODO: Implement this function.
+  if (!assert_equals_char("W", '^', head_to_body('W')))
+    return false;
+  if (!assert_equals_char("A", '<', head_to_body('A')))
+    return false;
+  if (!assert_equals_char("S", 'v', head_to_body('S')))
+    return false;
+  if (!assert_equals_char("D", '>', head_to_body('D')))
+    return false;
   return true;
 }
 
 bool test_get_next_row() {
   // TODO: Implement this function.
+  if (!assert_equals_unsigned_int("w", 4, get_next_row(5, 'w')))
+    return false;
+  if (!assert_equals_unsigned_int("a", 5, get_next_row(5, 'a')))
+    return false;
+  if (!assert_equals_unsigned_int("s", 6, get_next_row(5, 's')))
+    return false;
+  if (!assert_equals_unsigned_int("d", 5, get_next_row(5, 'd')))
+    return false;
+  if (!assert_equals_unsigned_int("^", 4, get_next_row(5, '^')))
+    return false;
+  if (!assert_equals_unsigned_int("<", 5, get_next_row(5, '<')))
+    return false;
+  if (!assert_equals_unsigned_int("v", 6, get_next_row(5, 'v')))
+    return false;
+  if (!assert_equals_unsigned_int(">", 5, get_next_row(5, '>')))
+    return false;
+  if (!assert_equals_unsigned_int("W", 4, get_next_row(5, 'W')))
+    return false;
+  if (!assert_equals_unsigned_int("A", 5, get_next_row(5, 'A')))
+    return false;
+  if (!assert_equals_unsigned_int("S", 6, get_next_row(5, 'S')))
+    return false;
+  if (!assert_equals_unsigned_int("D", 5, get_next_row(5, 'D')))
+    return false;
+  if (!assert_equals_unsigned_int("x", 5, get_next_row(5, 'x')))
+    return false;
+  if (!assert_equals_unsigned_int(" ", 5, get_next_row(5, ' ')))
+    return false;
   return true;
 }
 
 bool test_get_next_col() {
   // TODO: Implement this function.
+  if (!assert_equals_unsigned_int("w", 5, get_next_col(5, 'w')))
+    return false;
+  if (!assert_equals_unsigned_int("a", 4, get_next_col(5, 'a')))
+    return false;
+  if (!assert_equals_unsigned_int("s", 5, get_next_col(5, 's')))
+    return false;
+  if (!assert_equals_unsigned_int("d", 6, get_next_col(5, 'd')))
+    return false;
+  if (!assert_equals_unsigned_int("^", 5, get_next_col(5, '^')))
+    return false;
+  if (!assert_equals_unsigned_int("<", 4, get_next_col(5, '<')))
+    return false;
+  if (!assert_equals_unsigned_int("v", 5, get_next_col(5, 'v')))
+    return false;
+  if (!assert_equals_unsigned_int(">", 6, get_next_col(5, '>')))
+    return false;
+  if (!assert_equals_unsigned_int("W", 5, get_next_col(5, 'W')))
+    return false;
+  if (!assert_equals_unsigned_int("A", 4, get_next_col(5, 'A')))
+    return false;
+  if (!assert_equals_unsigned_int("S", 5, get_next_col(5, 'S')))
+    return false;
+  if (!assert_equals_unsigned_int("D", 6, get_next_col(5, 'D')))
+    return false;
+  if (!assert_equals_unsigned_int("x", 5, get_next_col(5, 'x')))
+    return false;
+  if (!assert_equals_unsigned_int(" ", 5, get_next_col(5, ' ')))
+    return false;
   return true;
 }
 
